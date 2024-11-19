@@ -8,9 +8,7 @@ use Illuminate\Support\Facades\Log;
 
 class ExpenseController extends Controller
 {
-    /**
-     * Display a listing of expenses.
-     */
+    // Display expenses.
     public function index()
     {
         try {
@@ -22,9 +20,7 @@ class ExpenseController extends Controller
         }
     }
 
-    /**
-     * Store a newly created expense.
-     */
+    //Store a newly created expense.
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -43,9 +39,7 @@ class ExpenseController extends Controller
         }
     }
 
-    /**
-     * Display the specified expense.
-     */
+    //Display expense.
     public function show($id)
     {
         try {
@@ -57,9 +51,7 @@ class ExpenseController extends Controller
         }
     }
 
-    /**
-     * Update the specified expense.
-     */
+    //Update expense.
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
@@ -79,9 +71,7 @@ class ExpenseController extends Controller
         }
     }
 
-    /**
-     * Remove the specified expense.
-     */
+    //Remove expense.
     public function destroy($id)
     {
         try {

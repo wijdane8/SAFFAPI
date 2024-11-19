@@ -19,18 +19,14 @@ class OtpMail extends Mailable implements ShouldQueue
 
     public Otp $otp;
 
-    /**
-     * Create a new message instance.
-     */
+    //new msg
     public function __construct(User $user, Otp $otp)
     {
         $this->user = $user;
         $this->otp = $otp;
     }
 
-    /**
-     * Get the message envelope.
-     */
+    
     public function envelope(): Envelope
     {
         return new Envelope(
@@ -38,9 +34,8 @@ class OtpMail extends Mailable implements ShouldQueue
         );
     }
 
-    /**
-     * Get the message content definition.
-     */
+    //Get the message content.
+     
     public function content(): Content
     {
         return new Content(
