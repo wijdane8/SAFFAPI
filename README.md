@@ -85,11 +85,11 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ---
 🧑‍💻 Authors
 
-Wijdan AlHarbi - GitHub Profile
+Wijdan AlHarbi - [GitHub Profile](https://github.com/wijdane8)
 ---
 ### 📧 Contact
 
 If you have any questions, feel free to reach out:
 
 Email: wijdane.ali@gmail.com
-GitHub: Your GitHub Profile
+GitHub: (https://github.com/wijdane8)
