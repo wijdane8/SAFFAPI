@@ -79,17 +79,18 @@ npm start
 The frontend will now be accessible at http://localhost:3000.
 
 ---
-📜 License
+### 📜 License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
 ---
-🧑‍💻 Authors
+### 🧑‍💻 Authors
 
 Wijdan AlHarbi - [GitHub Profile](https://github.com/wijdane8)
+
 ---
 ### 📧 Contact
 
 If you have any questions, feel free to reach out:
 
 Email: wijdane.ali@gmail.com
-GitHub: (https://github.com/wijdane8)
