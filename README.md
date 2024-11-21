@@ -46,7 +46,7 @@ A robust and feature-rich Expense Tracker application that allows users to manag
 1. **Clone the repository:**
 
    Open your terminal and execute the following commands:
-   ```bash
+   
 Install dependencies:
 Ensure you have Composer installed, then run:
 
