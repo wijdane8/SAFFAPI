@@ -41,11 +41,44 @@ A robust and feature-rich Expense Tracker application that allows users to manag
 
 ## 📥 Installation & Setup
 
-### Backend
-1. Clone the repository:
+### Backend Setup
+
+1. **Clone the repository:**
+
+   Open your terminal and execute the following commands:
    ```bash
    git clone https://github.com/your-username/expense-tracker.git
    cd expense-tracker/backend
+Install dependencies:
+Ensure you have Composer installed, then run:
+
+composer install
+Set up environment variables:
+Create a .env file by copying the example file:
+
+cp .env.example .env
+Update the .env file with your database credentials.
+Generate the application key:
+php artisan key:generate
+Run migrations:
+php artisan migrate
+Run the development server:
+Start the Laravel backend server:
+
+php artisan serve
+The backend will now be accessible at http://127.0.0.1:8000.
+Frontend Setup
+Navigate to the frontend directory:
+cd ../frontend
+Install dependencies:
+Ensure Node.js and npm are installed, then run:
+
+npm install
+Run the development server:
+Start the React development server:
+
+npm start
+The frontend will now be accessible at http://localhost:3000.
 
 ---
 📜 License
