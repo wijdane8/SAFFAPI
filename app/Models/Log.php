@@ -9,19 +9,29 @@ class Log extends Model
 {
     use HasFactory;
 
+    // Specify the attributes that can be mass assigned
     protected $fillable = [
-        'expense_id',
-        'action',
-        'description',
-        'os',
-        'browser',
-        'user_agent',
-        'ip_address',
-        'timestamp',
+        'user_id',       // The user who performed the action
+        'expense_id',    // The expense related to the action
+        'action_type',   // Type of action (create, update, delete, view)
+        'description',   // A description of the action
+        'ip_address',    // The IP address from which the action was performed
+        'timestamp',     // Timestamp of when the action was performed
     ];
 
+    /**
+     * Relationship with the Expense model
+     */
     public function expense()
     {
         return $this->belongsTo(Expense::class);
+    }
+
+    /**
+     * Relationship with the User model
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

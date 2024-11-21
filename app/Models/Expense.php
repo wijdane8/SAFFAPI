@@ -19,4 +19,9 @@ class Expense extends Model
     {
         return $this->hasMany(Log::class);
     }
+    public function user()
+{
+    return $this->belongsTo(User::class);
+}
+
 }

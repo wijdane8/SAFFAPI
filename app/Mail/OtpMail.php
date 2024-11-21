@@ -25,6 +25,13 @@ class OtpMail extends Mailable implements ShouldQueue
         $this->user = $user;
         $this->otp = $otp;
     }
+    public function build()
+    {
+        return $this->view('emails.otp')->with([
+            'user' => $this->user,
+            'otp' => $this->otp->code,
+        ]);
+    }
 
     
     public function envelope(): Envelope

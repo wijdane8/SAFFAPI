@@ -7,6 +7,7 @@ use App\Http\Resources\UserResource;
 use App\Services\AuthService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -42,35 +43,40 @@ class AuthController extends Controller
         ], 201);
     }
 
-    public function login(Request $request): Response
-    {
-        // validate request
-        $request->validate([
-            'email' => 'required|email|max:255',
-            'password' => 'required|min:6|max:255'
-        ]);
+    public function login(Request $request)
+{
+    // Validate request
+    $validatedData = $request->validate([
+        'email' => 'required|email|max:255',
+        'password' => 'required|string|min:6|max:255',
+    ]);
 
-        // login user
-        $user = $this->authService->login($request);
-
-        if (!$user) {
-            return response([
-                'message' => __('auth.failed'),
-            ], 401);
-        }
-
-        // create access token
-        $token = $user->createToken('auth')->plainTextToken;
-
-        // return
-        return response([
-            'message' => __('app.login_success' . ($user->email_verified_at ? '' : '_verify')),
-            'results' => [
-                'user' => new UserResource($user),
-                'token' => $token
-            ]
-        ]);
+    // Attempt login
+    if (!Auth::attempt($validatedData)) {
+        return response()->json([
+            'message' => __('auth.failed'), // Translatable error message
+        ], 401);
     }
+
+    // Get authenticated user
+    $user = Auth::user();
+
+    // Generate API token
+    $token = $user->createToken('authToken')->plainTextToken;
+
+    // Check if the user is verified (optional)
+    $emailVerificationMessage = $user->email_verified_at 
+        ? __('app.login_success') 
+        : __('app.login_success_verify'); // Supports localization for different statuses
+
+    // Return response
+    return response()->json([
+        'message' => $emailVerificationMessage,
+        'user' => $user, // You can wrap this in a UserResource if needed
+        'token' => $token,
+    ], 200);
+}
+
 
 
     public function logout(Request $request): Response
