@@ -47,8 +47,6 @@ A robust and feature-rich Expense Tracker application that allows users to manag
 
    Open your terminal and execute the following commands:
    ```bash
-   git clone https://github.com/your-username/expense-tracker.git
-   cd expense-tracker/backend
 Install dependencies:
 Ensure you have Composer installed, then run:
 
