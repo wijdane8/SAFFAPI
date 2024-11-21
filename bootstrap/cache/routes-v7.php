@@ -199,6 +199,26 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/api/logs' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'expenses.logs',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/api/account-types' => 
       array (
         0 => 
@@ -255,33 +275,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/api/logs' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'generated::dQlvLVFuhBbS7xN9',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
       '/up' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'generated::a8yePq0Zv2NUakR9',
+            '_route' => 'generated::PWwYSzl6hr87K1F6',
           ),
           1 => NULL,
           2 => 
@@ -301,7 +301,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::7qUjnzg6SnlxaK9o',
+            '_route' => 'generated::9QU2qmmD39YVnLPC',
           ),
           1 => NULL,
           2 => 
@@ -961,6 +961,44 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'expenses.logs' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'api/logs',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth:sanctum',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Api\\ExpenseController@logs',
+        'controller' => 'App\\Http\\Controllers\\Api\\ExpenseController@logs',
+        'namespace' => NULL,
+        'prefix' => 'api',
+        'where' => 
+        array (
+        ),
+        'as' => 'expenses.logs',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'api.account.type.index' => 
     array (
       'methods' => 
@@ -1224,44 +1262,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::dQlvLVFuhBbS7xN9' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'api/logs',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'api',
-        ),
-        'uses' => 'App\\Http\\Controllers\\LogController@index',
-        'controller' => 'App\\Http\\Controllers\\LogController@index',
-        'namespace' => NULL,
-        'prefix' => 'api',
-        'where' => 
-        array (
-        ),
-        'as' => 'generated::dQlvLVFuhBbS7xN9',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'generated::a8yePq0Zv2NUakR9' => 
+    'generated::PWwYSzl6hr87K1F6' => 
     array (
       'methods' => 
       array (
@@ -1280,7 +1281,7 @@ app('router')->setCompiledRoutes(
 
                     return \\Illuminate\\Support\\Facades\\View::file(\'/Users/wijdan/Downloads/api-saff/vendor/laravel/framework/src/Illuminate/Foundation/Configuration\'.\'/../resources/health-up.blade.php\');
                 }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000002cf0000000000000000";}}',
-        'as' => 'generated::a8yePq0Zv2NUakR9',
+        'as' => 'generated::PWwYSzl6hr87K1F6',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1296,7 +1297,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::7qUjnzg6SnlxaK9o' => 
+    'generated::9QU2qmmD39YVnLPC' => 
     array (
       'methods' => 
       array (
@@ -1318,7 +1319,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::7qUjnzg6SnlxaK9o',
+        'as' => 'generated::9QU2qmmD39YVnLPC',
       ),
       'fallback' => false,
       'defaults' => 

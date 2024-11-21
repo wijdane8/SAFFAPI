@@ -102,24 +102,18 @@ class ExpenseController extends Controller
         ]);
     }
     public function logs()
-{
-        // Fetch logs for the authenticated user, eager load user and expense relationships
-        $logs = Log::with(['user', 'expense'])
-        ->where('user_id', Auth::id()) // Filter by the logged-in user
-        ->latest() // Sort logs by the latest
-        ->get();
+    {
+        $userId = Auth::id(); // Get the authenticated user's ID
 
-        // Check if logs are empty and return a message accordingly
-        if ($logs->isEmpty()) {
-        return response()->json([
-        'message' => 'No logs available.',
-        'data' => []
-        ], 200);
+        if (!$userId) {
+            return response()->json(['message' => 'Unauthorized'], 401);
         }
-
-        return response()->json([
-        'message' => 'Logs retrieved successfully.',
-        'data' => $logs
-        ], 200);
-        }
+    
+        $logs = Log::with(['user', 'expense']) // Eager load relationships
+            ->where('user_id', $userId) // Filter by the current user's ID
+            ->latest() // Sort logs by the latest
+            ->get();
+    
+        return response()->json($logs);
+}
 }
